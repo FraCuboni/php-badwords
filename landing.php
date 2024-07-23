@@ -4,9 +4,11 @@ $paragraph = $_GET['paragraph'];
 
 $censorship = $_GET['censorship'];
 
+$p_lenght = strlen(str_replace(' ', '', $paragraph));
 
-$paragraph = str_replace($censorship, '***', $paragraph);
+$paragraph_c = str_replace($censorship, '***', $paragraph);
 
+$pc_lenght = strlen(str_replace(' ', '', $paragraph_c));
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +21,12 @@ $paragraph = str_replace($censorship, '***', $paragraph);
 </head>
 
 <body>
-    <h1><?php echo $paragraph ?></h1>
-    <php>
+    <h1>paragrafo:</h1>
+    <h3><?php echo $paragraph ?></h3>
+    <h5>lenght <?php echo $p_lenght ?></h5>
+    <h1>paragrafo censurato:</h1>
+    <h3><?php echo $paragraph_c ?></h3>
+    <h5>lenght <?php echo $pc_lenght ?></h5>
 </body>
 
 </html>
